@@ -45,7 +45,7 @@ useEffect(() => {
     centerMode: true,
     centerPadding: 0,
     autoplaySpeed: 2000,
-    adaptiveHeight: false,
+    adaptiveHeight: true,
     beforeChange: (current, next) => setImageIndex(next)
   };
 
