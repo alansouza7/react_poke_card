@@ -16,9 +16,12 @@ const Hero = () => {
   const {data, isLoading, isError} = useFetchCards(url, ["cardsHero"])
   const{randomNumbers}=useGlobalContext()
 
+
 const cardsArray = data?.data?.filter(card=>{
   return card?.image?.includes("https")
 })
+
+
 
   const settings = {
     autoplay: true,
@@ -32,6 +35,7 @@ const cardsArray = data?.data?.filter(card=>{
     beforeChange: (current, next) => setImageIndex(next)
   };
 
+
    if(isError){
     return <Error />
   }
@@ -43,7 +47,7 @@ const cardsArray = data?.data?.filter(card=>{
 
 
   return (
-  <Wrapper className="page-container">
+  <Wrapper  className="page-container">
 
       <div className="carrousel" >
       <Slider {...settings}>
@@ -92,7 +96,7 @@ const Wrapper = styled.div`
 @media(max-width: 850px){
   .carrousel {
     height: 200px;
-    margin: 5rem 0 5rem 0 ;
+  
   }
 }
 

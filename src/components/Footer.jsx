@@ -34,8 +34,8 @@ const Footer = () =>{
   font-size: .875rem;
   font-weight: 500;
   margin: 0;
-  padding: 2rem 0;
-  text-align: center;
+  
+
 }
 
 button {
@@ -54,6 +54,7 @@ button > div,button > svg {
   width: 100%;
   height: 100%;
   display: flex;
+  justify-content: center;
 }
 
 button:before {
@@ -62,11 +63,14 @@ button:before {
   height: 3px;
   bottom: 0;
   left: 0;
-  width: 90%;
+  width: 100%;
   transform: scaleX(0);
   transform-origin: bottom right;
   background: currentColor;
   transition: transform 0.25s ease-out;
+}
+button {
+  text-align: center;
 }
 
 button:hover:before {
