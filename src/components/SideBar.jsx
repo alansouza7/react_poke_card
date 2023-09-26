@@ -4,11 +4,14 @@ import { FaTimes } from 'react-icons/fa'
 import styled from 'styled-components'
 import { NavLink } from 'react-router-dom'
 import { useGlobalContext } from '../context/context'
+import {TbCards} from 'react-icons/tb'
+import { useDeckContext } from '../context/deckContext'
 
 
 const Sidebar = () => {
 
    const {isSideBarOpen, closeSideBar} = useGlobalContext()
+   const {deck} = useDeckContext()
   
     return <SidebarContainer>
       <aside className={ isSideBarOpen? "sidebar show-sidebar": "sidebar"}>
@@ -20,6 +23,7 @@ const Sidebar = () => {
           <NavLink onClick={closeSideBar} className="link" to='/'>Home</NavLink>
           <NavLink onClick={closeSideBar} className="link" to='/cards'>Cards</NavLink>
           <NavLink onClick={closeSideBar} className="link" to='/series'>Series</NavLink>
+          <NavLink onClick={closeSideBar} className="button-nav-link deck" to='/deck'>Deck <TbCards />  </NavLink>
           </ul>
           
       </aside>
@@ -98,6 +102,8 @@ const Sidebar = () => {
         display: none;
       }
     }
+
+    
   `
   
   export default Sidebar
