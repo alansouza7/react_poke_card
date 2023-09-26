@@ -116,6 +116,12 @@ button:hover .clone > :nth-child(4) {
   transition-delay: 0.3s;
 }
 
+@media(max-width: 800px){
+  height: 10vh;
+}
+
+
+
 
 
   `
