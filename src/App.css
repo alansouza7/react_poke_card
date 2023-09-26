@@ -1,0 +1,229 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+:root {
+  /* colors */
+  
+
+  /* grey */
+  --grey-50: #f8fafc;
+  --grey-100: #f1f5f9;
+  --grey-200: #e2e8f0;
+  --grey-300: #cbd5e1;
+  --grey-400: #94a3b8;
+  --grey-500: #64748b;
+  --grey-600: #475569;
+  --grey-700: #334155;
+  --grey-800: #1e293b;
+  --grey-900: #0f172a;
+  /* rest of the colors */
+  --black: #222;
+  --white: #fff;
+  --off-white: #f8f9fa;
+  --beige: #fffae5;
+  --yellow: #fdffb6;
+  --red: #dd2d4a;
+  --blue: #0096c7;
+ 
+  /* rest of the vars */
+  --backgroundColor: var(--grey-50);
+  --textColor: var(--grey-900);
+  --transition: 0.3s ease-in-out all;
+  --max-width: 1120px;
+  --fixed-width: 600px;
+  --view-width: 90vw;
+  /* box shadow*/
+  --shadow-1: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  --shadow-2: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-3: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-4: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+body{
+  background-color: var(--off-white);
+}
+/* Box sizing rules */
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+  }
+  
+
+  a {
+    text-decoration: none;
+  }
+
+  ul,
+  ol {
+    list-style: none;
+  }
+  
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  /* Set core root defaults */
+  html{
+    scroll-behavior: smooth;
+    font-size: 62,5%;
+  }
+  
+  /* Set core body defaults */
+  body {
+    min-height: 100vh;
+    text-rendering: optimizeSpeed;
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  /* A elements that don't have a class get default styles */
+  a:not([class]) {
+    text-decoration-skip-ink: auto;
+  }
+  
+  /* Make images easier to work with */
+  img,
+  picture {
+    max-width: 100%;
+    display: block;
+  }
+  
+  /* Inherit fonts for inputs and buttons */
+  input,
+  button,
+  textarea,
+  select {
+    font: inherit;
+  }
+  
+
+
+/* OUTLET */
+
+.page-container {
+  width: 90vw;
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 2rem 2rem;
+}
+ 
+
+
+/* LOADING */
+@keyframes spinner {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+.button {
+  --bg: #000;
+  --hover-bg: #ff90e8;
+  --hover-text: #000;
+  color: #fff;
+  border: 1px solid var(--bg);
+  border-radius: 4px;
+  padding: 0.6em 1em;
+  background: var(--bg);
+  transition: 0.2s;
+  width: 150px;
+  cursor: pointer;
+}
+
+.button:hover {
+  transform: translate(-0.25rem,-0.25rem);
+  background: var(--red);
+  box-shadow: 0.25rem 0.25rem var(--bg);
+}
+
+.button:active {
+  transform: translate(0);
+  box-shadow: none;
+}
+
+
+/* PAGES PREVIOUS - NEXT */
+
+.button-flex{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 3rem 0;
+  gap: 2rem;
+}
+
+
+/* SINGLE SET INFO */
+
+.single-set-info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4rem;
+  background: var(--beige);
+  width: 100%;
+  min-height: 20vh;
+  padding: 2rem 0;
+}
+
+.single-set-title {
+  margin-bottom: 20px;
+}
+
+.single-set-underline{
+  padding: 16px 0;
+  position: relative;
+}
+
+.single-set-underline:before{
+    position: absolute;
+    content: '';
+    height: 0.2em;
+    width: 80%;
+    bottom: 12px;
+    z-index: 1;
+    background: var(--red); 
+}
+
+.single-set-names{
+  padding: 2px 0;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.set-info-img{
+  max-width: 250px;
+}
+
+/* PAGE TITLES UNDERLINE */
+
+.page-titles{
+  padding: 16px 0;
+  position: relative;
+}
+
+.page-titles:before{
+    position: absolute;
+    content: '';
+    height: 0.2em;
+    width: 80%;
+    bottom: 12px;
+    z-index: 1;
+    background: var(--red); 
+}
+
+.cards-title{
+  margin-bottom: 3rem;
+}
+
+.test{ 
+  background: url('./assets/wave.svg') center; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}

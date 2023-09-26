@@ -1,0 +1,14 @@
+export const NEXT_PAGE = "NEXT_PAGE"
+export const PREVIOUS_PAGE = "PREVIOUS_PAGE"
+export const OPEN_SIDEBAR = "OPEN_SIDEBAR"
+export const CLOSE_SIDEBAR = "CLOSE_SIDEBAR"
+export const GET_RANDOM_NUMBER = "GET_RANDOM_NUMBER"
+export const SEARCH_CARD = "SEARCH_CARD"
+export const CLEAR_FILTER = "CLEAR_FILTER"
+export const FILTER_SETS = "FILTER_SETS"
+
+/* DECK REDUCER  */
+
+export const ADD_TO_DECK = "ADD_DO_DECK"
+export const CLEAR_DECK = "CLEAR_DECK"
+export const UPDATE_FILTER = "UPDATE_FILTER"
