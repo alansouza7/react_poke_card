@@ -220,10 +220,14 @@ body{
   margin-bottom: 3rem;
 }
 
-.test{ 
+.footer-svg{ 
   background: url('./assets/wave.svg') center; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+}
+
+.empty {
+  height: 200px;
 }

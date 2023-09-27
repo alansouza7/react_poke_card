@@ -3,7 +3,7 @@ import  styled  from "styled-components"
 
 const Footer = () =>{
 
-    return <Wrapper className="test">
+    return <Wrapper className="footer-svg">
   <div className="footer-text">  
   <button>
     <div class="text">

@@ -5,7 +5,7 @@ import { colorness, darkness, dragon, fairy, fighting, fire, grass, lightning, m
 
 const Deck = () => {
 
-  const {filteredDeck, deleteCard} = useDeckContext()
+  const {filteredDeck, deleteCard, deck} = useDeckContext()
 
       const typeImages = {
         colorless: colorness,
@@ -21,7 +21,18 @@ const Deck = () => {
         water: water,
     }
 
-  
+  if(deck <=0){
+    return <div className='empty'>
+      <h2 style={{marginBottom: "1rem"}}>Add a new card</h2>
+    <Link to="/cards"> <button style={{height: "100"}} className='button'>Add new card</button></Link> 
+    </div> 
+  }
+
+  if(filteredDeck <=0){
+    return <div className='empty'>
+    <h2 style={{marginBottom: "1rem"}}>No matches found for this type</h2>
+  </div> 
+  }
 
   return (<Wrapper>
 
