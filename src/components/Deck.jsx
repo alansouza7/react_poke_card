@@ -24,7 +24,7 @@ const Deck = () => {
   if(deck <=0){
     return <div className='empty'>
       <h2 style={{marginBottom: "1rem"}}>Add a new card</h2>
-    <Link to="/cards"> <button style={{height: "100"}} className='button'>Add new card</button></Link> 
+    <Link to="/cards"> <button style={{height: "100"}} className='button'>Cards</button></Link> 
     </div> 
   }
 

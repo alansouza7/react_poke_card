@@ -95,6 +95,16 @@ const Wrapper = styled.section`
     padding: 0.25rem 0.5rem;
     border-radius: 9px;
   }
+
+  .flex:hover{
+    transform: scale(1.07);
+    transition: var(--transition);
+  }
+
+  .flex{
+    transition: var(--transition);
+  }
+
  
   
   @media (min-width: 768px) {
