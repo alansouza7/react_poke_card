@@ -8,6 +8,7 @@ import { useDeckContext } from "../context/deckContext"
 const url = "https://api.tcgdex.net/v2/en/cards/"
 
 
+
 const SingleCard = () => {
 
   const {getRandomNumbers} = useGlobalContext()
@@ -47,7 +48,7 @@ const {attacks, hp, abilities, rarity, set, types} = data.data
     
     <div className="img_div">
     <img className="img" src={`${img}/high.webp`} alt={name} />
-    <button onClick={()=>addToDeck(data.data)} type="button" className="button">Add to Deck</button>
+    <button onClick={()=>addToDeck(data.data)} type="button" className="button">Favourite </button>
       
     </div>
      

@@ -30,7 +30,7 @@ const DeckAttribute = () => {
           <div className="form-control">
             <h2>Total: {deck.length}</h2>
 
-            <button style={{background: "#0077b6"}} type="button" className="clear-btn" value={"all"} onClick={updateFilter}> <TbCards/>  My Deck</button>
+            <button style={{background: "#0077b6"}} type="button" className="clear-btn" value={"all"} onClick={updateFilter}> <TbCards/>  My Favourites</button>
           </div>
           <div className="form-control">
               <h4>Types</h4>
@@ -47,7 +47,7 @@ const DeckAttribute = () => {
           </div>
 
          
-          <button type="button" className="clear-btn" onClick={clearDeck}>clear deck</button>
+          <button type="button" className="clear-btn" onClick={clearDeck}>clear cards</button>
           </div>
          
 

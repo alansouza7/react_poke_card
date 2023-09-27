@@ -1,6 +1,6 @@
 import { createContext, useContext, useEffect} from "react";
 import { useReducer } from "react"
-import { ADD_TO_DECK, CLEAR_DECK, UPDATE_FILTER} from "../actions"
+import { ADD_TO_DECK, CLEAR_DECK, UPDATE_FILTER, DELETE_CARD} from "../actions"
 import deckReducer from "../reducer/deckReducer";
 
 const getDeckLocalStorage = () =>{
@@ -83,12 +83,16 @@ const [state, dispatch] = useReducer(deckReducer, reducerState)
        dispatch({type: UPDATE_FILTER, payload: value})
     }
 
+    const deleteCard = (id, type)=>{
+        dispatch({type: DELETE_CARD, payload: {id, type}})
+    }
+
     useEffect(()=>{
         localStorage.setItem('deck', JSON.stringify(state))
     }, [state])
 
 
-    return <DeckContexts.Provider value={{...state, addToDeck, clearDeck, updateFilter}}>
+    return <DeckContexts.Provider value={{...state, addToDeck, clearDeck, updateFilter, deleteCard}}>
         {children}
     </DeckContexts.Provider>
 }

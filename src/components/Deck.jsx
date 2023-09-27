@@ -5,7 +5,7 @@ import { colorness, darkness, dragon, fairy, fighting, fire, grass, lightning, m
 
 const Deck = () => {
 
-  const {filteredDeck} = useDeckContext()
+  const {filteredDeck, deleteCard} = useDeckContext()
 
       const typeImages = {
         colorless: colorness,
@@ -20,18 +20,23 @@ const Deck = () => {
         psychic: psychic,
         water: water,
     }
- 
+
+  
 
   return (<Wrapper>
 
       {filteredDeck?.map((card, index)=>{
        const {id, img, name, type} = card
         return <div key={index} className='main-card-box'>
-          <Link to={`/card/${id}`}> <img className='main-img' width="150" src={img} alt={name} /></Link>
+          <img className='main-img' width="200" src={img} alt={name} />
           <div className="deck-info">
          {type?<><img width="20" src={typeImages[type.toLowerCase()] || null} alt="" /> <h5>{name}</h5></>: <h5>{name}</h5>} 
           </div>
-              
+          <div className="buttons">
+         <Link to={`/card/${id}`}>  <button className="button-blue" >View</button>  </Link>
+          <button onClick={()=>deleteCard(id, type)} className="button-red" >Delete</button>
+          </div>  
+          
         </div>
       })}
     
@@ -52,8 +57,8 @@ const Wrapper = styled.section`
   transition: var(--transition);
   border-radius: 12px;
   padding: 1rem;
-  height: 280px;
-  width: 180px
+  height: 390px;
+  width: 230px
 }
 
 
@@ -65,18 +70,42 @@ const Wrapper = styled.section`
   margin-top: 1rem;
 }
 
-.main-img{
-  transition: var(--transition);
-}
-
-.main-img:hover {
-  box-shadow: var(--shadow-4);
-  transform: scale(1.8);
-  transition: var(--transition);
-}
 
 img{
   border-radius: 6px;
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 0.8rem;
+}
+
+.button-blue, .button-red {
+  --bg: #000;
+  color: #fff;
+  border: 1px solid var(--bg);
+  border-radius: 4px;
+  padding: 0.3em;
+  transition: 0.2s;
+  width: 60px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.button-blue{
+  background: var(--blue);
+}
+
+.button-red{
+  background: var(--red);
+}
+
+.button-blue:hover, .button-red:hover {
+  transform: translate(-0.25rem,-0.25rem);
+  box-shadow: 0.25rem 0.25rem var(--bg);
 }
 
 `

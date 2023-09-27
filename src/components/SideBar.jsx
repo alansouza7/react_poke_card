@@ -23,7 +23,7 @@ const Sidebar = () => {
           <NavLink onClick={closeSideBar} className="link" to='/'>Home</NavLink>
           <NavLink onClick={closeSideBar} className="link" to='/cards'>Cards</NavLink>
           <NavLink onClick={closeSideBar} className="link" to='/series'>Series</NavLink>
-          <NavLink onClick={closeSideBar} className="button-nav-link deck" to='/deck'>Deck <TbCards />  </NavLink>
+          <NavLink onClick={closeSideBar} className="button-nav-link deck" to='/deck'>Favourites <TbCards />  </NavLink>
           </ul>
           
       </aside>

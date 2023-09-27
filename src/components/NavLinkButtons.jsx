@@ -14,7 +14,7 @@ const NavLinkButtons = () => {
      <NavLink  className="button-nav-link" onClick={getRandomNumbers}  to='/'>Home</NavLink>
           <NavLink className="button-nav-link" to='/cards'>Cards</NavLink>
           <NavLink className="button-nav-link" to='/series'>Series</NavLink>
-          <NavLink className="button-nav-link deck" to='/deck'>Deck {deck.length>0?<span className="deck-qtd">{deck.length}</span>:<TbCards className="deck_card"/> } </NavLink>
+          <NavLink className="button-nav-link deck" to='/deck'>Favourites {deck.length>0?<span className="deck-qtd">{deck.length}</span>:<TbCards className="deck_card"/> } </NavLink>
           </ul>
           </Wrapper>
   )
@@ -55,10 +55,10 @@ const Wrapper = styled.div `
   color: var(--hover-text);
   border: 2px solid #000;
   border-radius: 4px;
-  padding: 0.6em 1em;
+  padding: 0.8em 1em;
   background: var(--beige);
   transition: 0.2s;
-  width: 100px;
+  width: 130px;
   cursor: pointer;
   text-align: center;
 }

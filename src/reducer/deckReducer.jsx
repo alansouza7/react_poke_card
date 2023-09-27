@@ -1,4 +1,4 @@
-import { ADD_TO_DECK, CLEAR_DECK, UPDATE_FILTER} from "../actions"
+import { ADD_TO_DECK, CLEAR_DECK, UPDATE_FILTER, DELETE_CARD} from "../actions"
 
 
 const deckReducer = (state, action) =>{
@@ -18,18 +18,19 @@ const deckReducer = (state, action) =>{
         const updateTypeQtd = state.types.find(item => item.type === cardSelected.type)
 
         if(updateTypeQtd){
-            updateTypeQtd.qtd = updateTypeQtd.qtd + 1
+            if (!state.deck.some(item => item.name === cardSelected.name)){
+                updateTypeQtd.qtd = updateTypeQtd.qtd + 1
+            }
+           
         }
 
-        /* Update Category */
-        const updateCategoryQtd = state.categories.find(item => item.category === cardSelected.categories)
-
-        if(updateCategoryQtd){
-            updateCategoryQtd.qtd = updateCategoryQtd.qtd +1
+        if (!state.deck.some(item => item.name === cardSelected.name)) {
+            return { ...state, deck:[...state.deck, cardSelected], filteredDeck: [...state.deck, cardSelected]}
         }
 
+        return state
 
-        return { ...state, deck:[...state.deck, cardSelected], filteredDeck: [...state.deck, cardSelected]}
+       
     }
    
     if(action.type === CLEAR_DECK){
@@ -70,6 +71,25 @@ const deckReducer = (state, action) =>{
       return {...state, filteredDeck: deckFiltered}
     }
 
+    if(action.type === DELETE_CARD){
+        const deck = state.filteredDeck
+        const {id, type} = action.payload
+        
+
+        const tempDeck = deck.filter(card =>{
+            return card.id !== id
+        })
+
+          /* Update Type */
+          const updateTypeQtd = state.types.find(item => item.type === type)
+
+          if(updateTypeQtd){
+              updateTypeQtd.qtd = updateTypeQtd.qtd - 1
+          }
+
+
+       return {...state, filteredDeck: tempDeck, deck: tempDeck}
+    }
    
 }
 
