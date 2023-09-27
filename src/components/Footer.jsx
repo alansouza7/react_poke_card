@@ -26,7 +26,7 @@ const Footer = () =>{
   export default Footer
 
   const Wrapper = styled.footer`
-   height: 30vh;
+   height: 35vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -55,6 +55,7 @@ button > div,button > svg {
   height: 100%;
   display: flex;
   justify-content: center;
+  
 }
 
 button:before {
@@ -117,7 +118,7 @@ button:hover .clone > :nth-child(4) {
 }
 
 @media(max-width: 800px){
-  height: 10vh;
+  height: 20vh;
 }
 
 
